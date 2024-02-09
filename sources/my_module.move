@@ -66,8 +66,6 @@ module my_sui_package::my_module {
     }
 
     public fun sword_create(magic: u64, strength: u64, recipient: address, ctx: &mut TxContext) {
-  
-
         // create a sword
         let sword = Sword {
             id: object::new(ctx),
@@ -79,7 +77,6 @@ module my_sui_package::my_module {
     }
 
     public fun sword_transfer(sword: Sword, recipient: address, _ctx: &mut TxContext) {
-
         // transfer the sword
         transfer::transfer(sword, recipient);
     }
