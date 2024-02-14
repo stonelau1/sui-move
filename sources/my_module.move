@@ -123,5 +123,18 @@ module my_sui_package::my_module {
         test_scenario::end(scenario_val);
     }
 
+     public fun new_sword(
+        forge: &mut Forge,
+        magic: u64,
+        strength: u64,
+        ctx: &mut TxContext,
+    ): Sword {
+        forge.swords_created = forge.swords_created + 1;
+        Sword {
+            id: object::new(ctx),
+            magic: magic,
+            strength: strength,
+        }
+    }
 
 }
